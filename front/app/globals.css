@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 173 80% 40%;
+    --radius: 0.5rem;
+
+    /* Colores personalizados para el tema claro */
+    --teal-600: 173 80% 40%;
+    --teal-700: 173 80% 35%;
+    --teal-800: 173 80% 30%;
+    --gray-50: 0 0% 98%;
+    --gray-100: 0 0% 96%;
+    --gray-800: 0 0% 20%;
+    --gray-900: 0 0% 10%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 173 80% 40%;
+
+    /* Colores personalizados para el tema oscuro */
+    --teal-600: 173 80% 35%;
+    --teal-700: 173 80% 30%;
+    --teal-800: 173 80% 25%;
+    --gray-50: 0 0% 15%;
+    --gray-100: 0 0% 20%;
+    --gray-800: 0 0% 85%;
+    --gray-900: 0 0% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+/* Estilos específicos para el modo oscuro usando variables CSS en lugar de @apply */
+.dark .bg-white {
+  background-color: hsl(222.2 84% 4.9%);
+}
+
+.dark .bg-gray-50 {
+  background-color: hsl(var(--gray-50));
+}
+
+.dark .bg-gray-100 {
+  background-color: hsl(var(--gray-100));
+}
+
+.dark .text-gray-500 {
+  color: hsl(215 20.2% 65.1%);
+}
+
+.dark .text-gray-600 {
+  color: hsl(210 40% 80%);
+}
+
+.dark .text-gray-700 {
+  color: hsl(var(--gray-800));
+}
+
+.dark .text-gray-800 {
+  color: hsl(var(--gray-900));
+}
+
+.dark .border-gray-200 {
+  border-color: hsl(217.2 32.6% 17.5%);
+}
+
+.dark .shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustar gradientes en modo oscuro */
+.dark .bg-gradient-to-b.from-teal-50.to-white {
+  background: linear-gradient(to bottom, hsl(173 80% 5%) 0%, hsl(222.2 84% 4.9%) 100%);
+}
+
+/* tailwind.config.css o global.css */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
