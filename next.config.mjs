@@ -28,7 +28,6 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  output: 'export', // 👉 Requerido para exportación estática
 };
 
 // Merge user config if it exists
