@@ -3,22 +3,14 @@ import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
 import { OficinaIntegrantes } from "@/components/oficinas/oficina-integrantes";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// 👇 Agregá esta función
-export async function generateStaticParams() {
-  // ⚠️ Reemplazá esto con la lógica real que consuma tus novedades
-  const novedades = [
-    { id: "1" },
-    { id: "2" },
-    { id: "3" },
-  ];
-
-  return novedades.map(n => ({
-    id: n.id,
-  }));
+interface PageProps {
+  params: {
+    id: string;
+  };
 }
 
-// 👇 Componente
-export default function NovedadesDetailPage({ params }: { params: { id: string } }) {
+// ✅ Componente principal
+export default function NovedadesDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <DashboardHeader />
